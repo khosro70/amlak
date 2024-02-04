@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { vazirMatn } from "@/utils/fonts";
 import Layout from "@/layout/Layout";
+import NextAuthProvider from "@/providers/NextAuthProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className={`bg-slate-200 ${vazirMatn.className}`}>
-        <Layout>{children}</Layout>
+        <NextAuthProvider>
+          <Layout>{children}</Layout>
+        </NextAuthProvider>
       </body>
     </html>
   );

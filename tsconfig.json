@@ -30,6 +30,12 @@
       "@/templates/*": ["src/components/templates/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/api/auth/[...nextauth]/route.jsx"
+, "src/app/(auth)/signup/page.jsx", "src/app/(auth)/signin/page.jsx"  ],
   "exclude": ["node_modules"]
 }
