@@ -8,3 +8,18 @@ export interface signUpFormData {
   password: string;
   confirmPassword: string;
 }
+
+export interface profileDataFormInterface {
+  title: string;
+  location: string;
+  phone: string;
+  price: string;
+  realState: string;
+  category: string;
+  constructionData: Date;
+  description?: string;
+  rules: string[];
+  amenities: string[];
+  newRule: string;
+  newAmenitie: string;
+}

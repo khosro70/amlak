@@ -4,6 +4,7 @@ import User from "@/models/User";
 import { verifyPassword } from "@/utils/auth";
 import connectDB from "@/utils/connectDB";
 
+
 export const authOptions = {
   session: { strategy: "jwt" },
   providers: [
@@ -36,4 +37,3 @@ export const authOptions = {
 const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
-

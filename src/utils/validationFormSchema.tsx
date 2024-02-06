@@ -20,4 +20,17 @@ export const validationSignInFormSchema = yup.object({
     .required("رمز عبور الزامی است"),
 });
 
+export const profileDataFormSchema = yup.object({
+  title: yup.string().required("عنوان آگهی الزامی است"),
+  location: yup.string().required("آدرس الزامی است"),
+  phone: yup.string().required("تلفن تماس الزامی است"),
+  price: yup.string().required("قیمت الزامی است"),
+  realState: yup.string().required("ثبت این فیلد الزامی است"),
+  category: yup.string(),
+  constructionData: yup.date(),
+  description: yup.string(),
+  newRule: yup.string(),
+  newAmenitie: yup.string(),
+});
+
 export default validationSignUpFormSchema;
