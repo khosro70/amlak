@@ -8,6 +8,7 @@ interface FormInputInterfaceProps {
   ErrorMessageClassName: string;
   text: string;
   name: string;
+  divClassName?: string;
 }
 
 const FormInput: React.FC<FormInputInterfaceProps> = ({
@@ -16,9 +17,14 @@ const FormInput: React.FC<FormInputInterfaceProps> = ({
   ErrorMessageClassName,
   text,
   name,
+  divClassName,
 }) => {
   return (
-    <div className="flex flex-col gap-y-1 w-full">
+    <div
+      className={` ${
+        divClassName ? divClassName : "flex flex-col gap-y-1 w-full"
+      }`}
+    >
       <label htmlFor="email">{text}</label>
       <Field className={FieldClassName} type={type} id={name} name={name} />
       <ErrorMessage
@@ -31,3 +37,5 @@ const FormInput: React.FC<FormInputInterfaceProps> = ({
 };
 
 export default FormInput;
+
+// flex flex-col gap-y-1 w-full

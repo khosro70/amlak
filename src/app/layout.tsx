@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`bg-slate-200 ${vazirMatn.className}`}>
+      <body className={`bg-neutral-200 ${vazirMatn.className}`}>
         <NextAuthProvider>
           <Layout>{children}</Layout>
         </NextAuthProvider>

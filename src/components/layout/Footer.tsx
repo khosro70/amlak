@@ -3,10 +3,10 @@ import Link from "next/link";
 
 const Footer: NextPage = () => {
   return (
-    <footer className="py-6 px-3 bg-slate-50 text-slate-800">
+    <footer className="py-6 px-3 bg-blue-200 text-slate-800">
       <div className="container mx-auto xl:max-w-[1200px] flex justify-between items-center gap-x-3">
         <div className="w-3/4">
-          <h1 className="text-lg mb-1">سامانه ی خرید و اجاره ی املاک</h1>
+          <h1 className="text-lg mb-1 font-medium">سامانه ی خرید و اجاره ی املاک</h1>
           <p>
             می‌شود. طراح گرافیک از این متن به عنوان عنصری از ترکیب بندی برای پر
             کردن صفحه و ارایه اولیه شکل ظاهری و کلی طرح سفارش گرفته شده استفاده
@@ -16,17 +16,17 @@ const Footer: NextPage = () => {
           </p>
         </div>
         <div>
-          <ul>
-            <li>
+          <ul className="space-y-2 list-disc">
+            <li className="hover:text-orange-600 font-medium transition">
               <Link href="#">تعرفه های قانونی</Link>
             </li>
-            <li>
+            <li className="hover:text-orange-600 font-medium transition">
               <Link href="#">مشاورین خبره</Link>
             </li>
-            <li>
+            <li className="hover:text-orange-600 font-medium transition">
               <Link href="#">دسترسی سریع</Link>
             </li>
-            <li>
+            <li className="hover:text-orange-600 font-medium transition">
               <Link href="#">قولنامه ی محضری</Link>
             </li>
           </ul>

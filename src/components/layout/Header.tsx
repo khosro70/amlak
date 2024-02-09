@@ -27,7 +27,7 @@ const Header: NextPage = () => {
               href="/dashboard"
               className="flex justify-end items-center text-lg font-medium gap-x-1"
             >
-              <FaUserAlt size={25} />
+              <FaUserAlt size={35} className="bg-white p-1 rounded text-blue-600 hover:text-blue-900 transition" />
             </Link>
           </div>
         ) : (

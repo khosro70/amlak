@@ -16,13 +16,13 @@ const DashboardSideBar = async () => {
         </span>
       </div>
       <ul className="sm:space-y-2 gap-x-3 sm:gap-x-0 flex flex-row items-center sm:items-start sm:flex-col text-sm sm:text-base">
-        <li>
+        <li className="hover:text-orange-500 transition">
           <Link href="/dashboard">حساب کربری</Link>
         </li>
-        <li>
+        <li className="hover:text-orange-500 transition">
           <Link href="/dashboard/my-profiles">آگهی های من</Link>
         </li>
-        <li>
+        <li className="hover:text-orange-500 transition">
           <Link href="/dashboard/add">ثبت آگهی</Link>
         </li>
       </ul>
