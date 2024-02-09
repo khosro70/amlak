@@ -2,6 +2,7 @@ import React from "react";
 import { Form, useFormikContext } from "formik";
 import {
   AddProfilePageInnerFormInterfaceProps,
+  CartInterface,
   profileDataFormInterface,
 } from "@/utils/contracts";
 import ProfilePageLoading from "./ProfilePageLoading";
@@ -11,9 +12,10 @@ import RadioBotton from "./RadioBotton";
 import RulesSection from "./RulesSection";
 import AmenitiesSection from "./AmenitiesSection";
 
-const AddProfilePageInnerForm: React.FC<
-  AddProfilePageInnerFormInterfaceProps
-> = ({ loading }) => {
+const AddProfilePageInnerForm: React.FC<CartInterface> = ({
+  loading,
+  title,
+}) => {
   const formik = useFormikContext<profileDataFormInterface>();
 
   return (
@@ -26,12 +28,21 @@ const AddProfilePageInnerForm: React.FC<
       <RulesSection />
       <AmenitiesSection />
       <TextAreaInProfileDataPage />
-      <button
-        className="rounded block text-right text-white bg-orange-600 px-3 py-1"
-        type="submit"
-      >
-        {loading ? <ProfilePageLoading /> : "ثبت آگهی"}
-      </button>
+      {title ? (
+        <button
+          className="rounded block text-right text-white bg-orange-600 px-3 py-1"
+          type="submit"
+        >
+          {loading ? <ProfilePageLoading /> : "ویرایش آگهی"}
+        </button>
+      ) : (
+        <button
+          className="rounded block text-right text-white bg-orange-600 px-3 py-1"
+          type="submit"
+        >
+          {loading ? <ProfilePageLoading /> : "ثبت آگهی"}
+        </button>
+      )}
     </Form>
   );
 };

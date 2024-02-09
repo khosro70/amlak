@@ -9,13 +9,26 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoIosPricetags } from "react-icons/io";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const DashboardCard: React.FC<DashboardCardPropsInterface> = ({ data }) => {
   const router = useRouter();
   const editHandler = () => {
-    router.push(`/dashboard/my-profiles/${data._id}`)
+    router.push(`/dashboard/my-profiles/${data._id}`);
   };
-  const deleteHandler = () => {};
+  const deleteHandler = async () => {
+    const res = await fetch(`/api/profile/delete/${data._id}`, {
+      method: "DELETE",
+    });
+    const Data = await res.json();
+    console.log(Data)
+    if (Data.error) {
+      toast.error(Data.error);
+    } else {
+      toast.success(Data.message);
+      router.refresh();
+    }
+  };
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center gap-x-3 border-b-2 pt-2 pb-2 lg:pb-4 w-full ">
       <Image

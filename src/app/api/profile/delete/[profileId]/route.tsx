@@ -32,7 +32,7 @@ export async function DELETE(req: any, context: any) {
 
     const profile = await Profile.findOne({ _id: id });
 
-    if (!user._id.equals(profile.userId)) {
+    if (!user._id.equals(profile?.userId)) {
       return NextResponse.json(
         {
           error: "دسترسی شما به این آگهی محدود شده است",

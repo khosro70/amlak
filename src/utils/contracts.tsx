@@ -14,6 +14,7 @@ export interface signUpFormData {
 }
 
 export interface CartInterface {
+  loading?: boolean;
   _id?: any;
   title: string;
   description: string;

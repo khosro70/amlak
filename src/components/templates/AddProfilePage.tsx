@@ -2,41 +2,43 @@
 import React, { useState } from "react";
 import { profileDataFormSchema } from "@/utils/validationFormSchema";
 import { Formik } from "formik";
-import { CartInterface, profileDataFormInterface } from "@/utils/contracts";
+import { CartInterface } from "@/utils/contracts";
 import { omit } from "lodash";
 import AddProfilePageInnerForm from "@/modules/profileDataForm/AddProfilePageInnerForm";
 import toast, { Toaster } from "react-hot-toast";
 import { initialValues } from "@/utils/someValues";
+import { useRouter } from "next/navigation";
 
 interface AddProfilePagePropsInterface {
   data: CartInterface;
 }
 
 const AddProfilePage: React.FC<AddProfilePagePropsInterface> = ({ data }) => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
-  const handleSubmit = async (
-    values: profileDataFormInterface,
-    actions: any
-  ) => {
+  const handleSubmit = async (values: CartInterface, actions: any) => {
     setLoading(true);
-    console.log(values);
     const priceNumber = +values.price;
     const Newvalues = { ...values, price: priceNumber };
     const valuesToSend = omit(Newvalues, ["newRule", "newAmenitie"]);
     const res = await fetch("/api/profile", {
-      method: "POST",
+      method: data ? "PATCH" : "POST",
       body: JSON.stringify({ ...valuesToSend }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     });
-    const data = await res.json();
+    const Data = await res.json();
     setLoading(false);
-    if (data.error) {
-      toast.error(data.error);
+    if (Data.error) {
+      toast.error(Data.error);
     } else {
+      router.refresh();
       actions.resetForm();
-      toast.success(data.message);
+      toast.success(Data.message);
+      setTimeout(() => {
+        router.push("/dashboard/my-profiles");
+      }, 1000);
     }
   };
   console.log(data);
@@ -46,11 +48,12 @@ const AddProfilePage: React.FC<AddProfilePagePropsInterface> = ({ data }) => {
         {data ? "ویرایش آگهی" : "ثبت آگهی"}
       </h1>
       <Formik
-        initialValues={initialValues}
+        initialValues={data ? data : initialValues}
         validationSchema={profileDataFormSchema}
         onSubmit={handleSubmit}
+        enableReinitialize={true}
       >
-        <AddProfilePageInnerForm loading={loading} />
+        <AddProfilePageInnerForm loading={loading} {...data} />
       </Formik>
       <Toaster />
     </div>
