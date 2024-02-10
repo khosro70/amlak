@@ -9,7 +9,7 @@ const Header: NextPage = () => {
   const { data } = useSession();
 
   return (
-    <header className="w-full py-3 bg-slate-50 mb-3 text-slate-800">
+    <header className="w-full py-3 bg-slate-50 mb-3 text-slate-800 sticky top-0 shadow-lg">
       <div className="container mx-auto xl:max-w-[1200px] px-3 flex justify-between items-center">
         <div>
           <ul className="flex justify-start items-center gap-x-4 text-lg font-medium">

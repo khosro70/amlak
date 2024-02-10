@@ -36,9 +36,6 @@ const AddProfilePage: React.FC<AddProfilePagePropsInterface> = ({ data }) => {
       router.refresh();
       actions.resetForm();
       toast.success(Data.message);
-      setTimeout(() => {
-        router.push("/dashboard/my-profiles");
-      }, 1000);
     }
   };
   console.log(data);

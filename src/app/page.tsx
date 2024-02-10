@@ -1,8 +1,9 @@
+import HomePage from "@/templates/HomePage";
 import { NextPage } from "next";
  
 const Home: NextPage = () => {
-  return <h1 className="text-2xl">سلام</h1>;
+  return <HomePage />;
 };
 
-export default Home;
+export default Home; 
  

@@ -34,8 +34,8 @@ const DashboardCard: React.FC<DashboardCardPropsInterface> = ({ data }) => {
       <Image
         className=" w-full lg:w-4/12"
         src={`/images/categoryImage/${data.category}.jpg`}
-        width={150}
-        height={150}
+        width={800}
+        height={800}
         alt="image"
         priority
       />
@@ -83,6 +83,7 @@ const DashboardCard: React.FC<DashboardCardPropsInterface> = ({ data }) => {
           ویرایش آگهی
         </button>
       </div>
+      
     </div>
   );
 };
