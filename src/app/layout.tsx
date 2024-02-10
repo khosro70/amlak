@@ -16,7 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`bg-neutral-200 ${vazirMatn.className}`}>
+      <body
+        className={`bg-neutral-200 bg-fixed bg-[url('/images/profileBg.jpg')] ${vazirMatn.className}`}
+      >
         <NextAuthProvider>
           <Layout>{children}</Layout>
         </NextAuthProvider>

@@ -11,7 +11,7 @@ const mapCategoryToPersian = (category: CategoryType): string => {
     case "store":
       return "مغازه";
     default:
-      return category;
+      return "category";
   }
 };
 
@@ -21,10 +21,8 @@ export const mapStringToPersian = (str: string): string => {
     const persianValue = mapCategoryToPersian(categoryType);
     return persianValue;
   }
-  const defaultCategory = "office"; 
+  const defaultCategory = "office";
   const categoryType = defaultCategory as CategoryType;
   const persianValue = mapCategoryToPersian(categoryType);
   return persianValue;
 };
-
-

@@ -21,7 +21,7 @@ const DashboardCard: React.FC<DashboardCardPropsInterface> = ({ data }) => {
       method: "DELETE",
     });
     const Data = await res.json();
-    console.log(Data)
+    console.log(Data);
     if (Data.error) {
       toast.error(Data.error);
     } else {
@@ -30,7 +30,7 @@ const DashboardCard: React.FC<DashboardCardPropsInterface> = ({ data }) => {
     }
   };
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center gap-x-3 border-b-2 pt-2 pb-2 lg:pb-4 w-full ">
+    <div className="flex flex-col lg:flex-row justify-between items-center gap-x-3 border-b-2 border-slate-300 pt-2 pb-2 lg:pb-4 w-full ">
       <Image
         className=" w-full lg:w-4/12"
         src={`/images/categoryImage/${data.category}.jpg`}
@@ -71,19 +71,18 @@ const DashboardCard: React.FC<DashboardCardPropsInterface> = ({ data }) => {
       </div>
       <div className="flex flex-col justify-between items-start gap-y-4 p-3 w-full lg:w-3/12">
         <button
-          className="bg-red-600 py-1 px-2 rounded w-full"
+          className="hover:bg-red-200 font-medium transition border-2 border-dashed border-red-500 py-1 px-2 rounded w-full"
           onClick={deleteHandler}
         >
           حذف آگهی
         </button>
         <button
-          className="bg-yellow-500 py-1 px-2 rounded w-full"
+          className="hover:bg-yellow-200 font-medium transition border-2 border-dashed border-yellow-500 py-1 px-2 rounded w-full"
           onClick={editHandler}
         >
           ویرایش آگهی
         </button>
       </div>
-      
     </div>
   );
 };

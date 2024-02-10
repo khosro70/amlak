@@ -38,9 +38,8 @@ const AddProfilePage: React.FC<AddProfilePagePropsInterface> = ({ data }) => {
       toast.success(Data.message);
     }
   };
-  console.log(data);
   return (
-    <div className="text-center">
+    <div className="text-center bg-slate-100 pt-3 rounded">
       <h1 className="font-bold text-slate-800 mb-3">
         {data ? "ویرایش آگهی" : "ثبت آگهی"}
       </h1>

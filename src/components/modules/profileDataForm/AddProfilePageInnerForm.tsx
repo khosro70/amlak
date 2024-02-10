@@ -21,7 +21,7 @@ const AddProfilePageInnerForm: React.FC<CartInterface> = ({
   return (
     <Form
       onSubmit={formik.handleSubmit}
-      className="space-y-5 justify-center items-start min-w-[300px] border border-slate-300 shadow p-6 gap-y-3 mb-2 bg-slate-50"
+      className="space-y-5 justify-center items-start min-w-[300px] border border-slate-300 shadow p-6 gap-y-3 mb-2"
     >
       <ProfileDataFormSection1 />
       <RadioBotton />

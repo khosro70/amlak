@@ -13,6 +13,24 @@ export interface signUpFormData {
   confirmPassword: string;
 }
 
+export interface buyResidentialPropsInterface {
+  params?: {};
+  searchParams: { category: string };
+}
+
+export interface BuyResidentialPageInterfaceProps {
+  data: CartInterface[];
+  category: string;
+}
+
+interface Section1PropsInterface {
+  title: string;
+  location: string;
+  description: string;
+  rules: string[];
+  amenities: string[];
+}
+
 export interface CartInterface {
   loading?: boolean;
   _id?: any;

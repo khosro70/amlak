@@ -7,7 +7,7 @@ import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoIosPricetags } from "react-icons/io";
 
-const Card: React.FC<CartInterface> = ({ category, price, title }) => {
+const Card: React.FC<CartInterface> = ({ category, price, title, _id }) => {
   return (
     <div className="bg-slate-200 p-1 flex flex-col justify-between">
       <Image
@@ -32,7 +32,7 @@ const Card: React.FC<CartInterface> = ({ category, price, title }) => {
           {englishNumbersToPersian(price)} تومان
         </span>
         <Link
-          href="#"
+          href={`/buy-residential/${_id}`}
           className="flex justify-between items-center w-full mt-2 text-sm"
         >
           <span className="text-blue-600 hover:text-orange-500 transition">
