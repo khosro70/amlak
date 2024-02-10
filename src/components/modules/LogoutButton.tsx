@@ -9,7 +9,7 @@ const LogoutButton: React.FC = () => {
   };
   return (
     <button
-      className="flex items-center transition-all gap-x-2 text-red-600 text-sm sm:text-base hover:font-bold"
+      className="flex font-bold items-center transition-all gap-x-2 text-red-600 text-sm sm:text-base hover:font-bold"
       onClick={handleSignOut}
     >
       <FiLogOut className="text-red-600 text-lg" />

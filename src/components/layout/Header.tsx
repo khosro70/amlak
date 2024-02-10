@@ -12,12 +12,21 @@ const Header: NextPage = () => {
     <header className="w-full py-3 bg-slate-50 mb-3 text-slate-800 sticky top-0 shadow-lg">
       <div className="container mx-auto xl:max-w-[1200px] px-3 flex justify-between items-center">
         <div>
-          <ul className="flex justify-start items-center gap-x-4 text-lg font-medium">
-            <li>
+          <ul className="flex justify-start items-center gap-x-4 text-sm sm:text-lg font-medium">
+            <li className="hover:text-orange-500 transition">
               <Link href="/">صفحه اصلی</Link>
             </li>
-            <li>
-              <Link href="/buy-residential">آگهی ها</Link>
+            <li className="hover:text-orange-500 transition">
+              <Link href="/buy-residential">فروش</Link>
+            </li>
+            <li className="hover:text-orange-500 transition">
+              <Link href="/buy-residential">خرید</Link>
+            </li>
+            <li className="hover:text-orange-500 transition">
+              <Link href="/buy-residential">رهن</Link>
+            </li>
+            <li className="hover:text-orange-500 transition">
+              <Link href="/buy-residential">اجاره</Link>
             </li>
           </ul>
         </div>
@@ -25,16 +34,20 @@ const Header: NextPage = () => {
           <div>
             <Link
               href="/dashboard"
-              className="flex justify-end items-center text-lg font-medium gap-x-1"
+              className="flex justify-end items-center text-sm sm:text-lg font-medium gap-x-1 hover:text-blue-900"
             >
-              <FaUserAlt size={35} className="bg-white p-1 rounded text-blue-600 hover:text-blue-900 transition" />
+              <FaUserAlt
+                size={30}
+                className="bg-white p-1 rounded transition"
+              />
+              <span className="">املاک من</span>
             </Link>
           </div>
         ) : (
           <div>
             <Link
               href="/signin"
-              className="flex justify-end items-center text-lg font-medium gap-x-1"
+              className="flex justify-end items-center text-sm sm:text-lg font-medium gap-x-1"
             >
               <FiLogIn size={25} />
               <span>ورود</span>

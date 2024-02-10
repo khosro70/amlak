@@ -15,7 +15,7 @@ const DashboardSideBar = async () => {
           {session?.user?.email}
         </span>
       </div>
-      <ul className="sm:space-y-2 gap-x-3 sm:gap-x-0 flex flex-row items-center sm:items-start sm:flex-col text-sm sm:text-base">
+      <ul className="sm:space-y-2 gap-x-3 sm:gap-x-0 flex flex-row items-center sm:items-start sm:flex-col text-sm sm:text-base font-medium">
         <li className="hover:text-orange-500 transition">
           <Link href="/dashboard">حساب کربری</Link>
         </li>
