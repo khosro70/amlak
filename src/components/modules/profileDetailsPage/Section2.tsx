@@ -5,6 +5,7 @@ import { FaPhone } from "react-icons/fa";
 import { IoIosPricetags } from "react-icons/io";
 import { IoShareSocial } from "react-icons/io5";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
+import ShareButton from "./ShareButton";
 
 interface Section2PropsInterface {
   realState: string;
@@ -29,10 +30,7 @@ const Section2: React.FC<Section2PropsInterface> = ({
           <span className="text-sm">09129414308</span>
         </span>
       </div>
-      <div className="flex gap-x-2 border-2 justify-center items-center py-2 rounded-lg shadow-lg w-1/3 md:w-full">
-        <IoShareSocial size={18} className="font-medium" />
-        <span className="text-sm">اشتراک گذاری</span>
-      </div>
+      <ShareButton />
       <div className="flex flex-col justify-center items-center border-2 gap-y-2 py-6 shadow-lg w-1/3 md:w-full">
         <span className="flex gap-x-2 rounded-lg items-center">
           <span className="font-medium">آپارتمان</span>
