@@ -1,30 +1,25 @@
-import DashboardCard from "@/modules/myProfilesPage/DashboardCard";
-import { CartInterface } from "@/utils/contracts";
-
-import React from "react";
-import { Toaster } from "react-hot-toast";
+import { MyProfilesPageInterfaceProps } from "./MyProfilesPage";
 import { BsExclamationCircle } from "react-icons/bs";
+import DashboardCard from "@/modules/myProfilesPage/DashboardCard";
+import { Toaster } from "react-hot-toast";
 
-export interface MyProfilesPageInterfaceProps {
-  profiles: CartInterface[];
-  role?: string;
-}
-
-const MyProfilesPage: React.FC<MyProfilesPageInterfaceProps> = ({
+const AdminPage: React.FC<MyProfilesPageInterfaceProps> = ({
   profiles,
+  role,
 }) => {
   return (
     <div className="flex flex-col gap-y-2 bg-slate-200 p-2 justify-start items-center min-h-[calc(100vh-100px)]">
       {profiles.length ? null : (
         <div className="text-2xl font-bold flex flex-col gap-y-4 justify-center items-center min-h-[calc(100vh-100px)]">
           <BsExclamationCircle size={55} />
-          <span>هیچ آگهی ثبت نشده است!</span>
+          <span>هیچ آگهی در انتظار تاییدی وجود ندارد !</span>
         </div>
       )}
       {profiles.map((profile) => (
         <DashboardCard
           key={profile._id}
           data={JSON.parse(JSON.stringify(profile))}
+          role={role}
         />
       ))}
       <Toaster />
@@ -32,4 +27,4 @@ const MyProfilesPage: React.FC<MyProfilesPageInterfaceProps> = ({
   );
 };
 
-export default MyProfilesPage;
+export default AdminPage;

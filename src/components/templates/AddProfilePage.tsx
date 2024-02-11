@@ -10,7 +10,7 @@ import { initialValues } from "@/utils/someValues";
 import { useRouter } from "next/navigation";
 
 interface AddProfilePagePropsInterface {
-  data: CartInterface;
+  data?: CartInterface;
 }
 
 const AddProfilePage: React.FC<AddProfilePagePropsInterface> = ({ data }) => {

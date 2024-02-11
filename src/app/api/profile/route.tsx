@@ -16,7 +16,7 @@ interface SessionInterface {
 export async function GET(req: any) {
   try {
     await connectDB();
-    const profiles = await Profile.find().select("-userId");
+    const profiles = await Profile.find({ published: true }).select("-userId");
     return NextResponse.json(
       {
         data: profiles,

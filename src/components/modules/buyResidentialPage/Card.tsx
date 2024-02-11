@@ -9,7 +9,7 @@ import { IoIosPricetags } from "react-icons/io";
 
 const Card: React.FC<CartInterface> = ({ category, price, title, _id }) => {
   return (
-    <div className="bg-slate-200 p-1 flex flex-col justify-between">
+    <div className="bg-slate-200 shadow p-1 flex flex-col justify-between border border-slate-300">
       <Image
         className="w-full h-1/2"
         src={`/images/categoryImage/${category}.jpg`}

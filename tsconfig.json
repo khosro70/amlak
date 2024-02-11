@@ -35,7 +35,15 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/auth/[...nextauth]/route.jsx"
-, "src/app/(auth)/signup/page.jsx", "src/app/(auth)/signin/page.jsx", "src/app/dashboard/layout.jsx", "src/app/dashboard/page.jsx", "src/app/api/profile/route.tsx", "src/app/dashboard/my-profiles/page.jsx", "src/app/api/profile/delete/[profileId]/route.tsx"  ],
+    "src/app/api/auth/[...nextauth]/route.jsx",
+    "src/app/(auth)/signup/page.jsx",
+    "src/app/(auth)/signin/page.jsx",
+    "src/app/dashboard/layout.jsx",
+    "src/app/dashboard/page.jsx",
+    "src/app/api/profile/route.tsx",
+    "src/app/dashboard/my-profiles/page.jsx",
+    "src/app/api/profile/delete/[profileId]/route.tsx",
+    "src/app/admin/page.jsx"
+  ],
   "exclude": ["node_modules"]
 }

@@ -23,7 +23,7 @@ export interface BuyResidentialPageInterfaceProps {
   category: string;
 }
 
-interface Section1PropsInterface {
+export interface Section1PropsInterface {
   title: string;
   location: string;
   description: string;
@@ -62,6 +62,15 @@ export interface EditPagePropsInterface {
 export interface DashboardCardPropsInterface {
   key?: any;
   data: CartInterface;
+  role?: string;
+}
+
+export interface DashboardCardSectionInterface {
+  _id: string;
+  price: string;
+  title: string;
+  category: string;
+  location: string;
 }
 
 export interface profileDataFormInterface {

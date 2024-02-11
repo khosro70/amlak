@@ -1,21 +1,20 @@
 import React from "react";
 import { Form, useFormikContext } from "formik";
-import {
-  AddProfilePageInnerFormInterfaceProps,
-  CartInterface,
-  profileDataFormInterface,
-} from "@/utils/contracts";
+import { CartInterface, profileDataFormInterface } from "@/utils/contracts";
 import ProfilePageLoading from "./ProfilePageLoading";
 import TextAreaInProfileDataPage from "./TextAreaInProfileDataPage";
 import ProfileDataFormSection1 from "./ProfileDataFormSection1";
 import RadioBotton from "./RadioBotton";
 import RulesSection from "./RulesSection";
 import AmenitiesSection from "./AmenitiesSection";
+import { boolean } from "yup";
 
-const AddProfilePageInnerForm: React.FC<CartInterface> = ({
-  loading,
-  title,
-}) => {
+interface props {
+  loading: boolean;
+  title?: string;
+}
+
+const AddProfilePageInnerForm: React.FC<props> = ({ loading, title }) => {
   const formik = useFormikContext<profileDataFormInterface>();
 
   return (
