@@ -21,8 +21,8 @@ const HomePage: React.FC = () => {
   ];
   return (
     <div className="min-h-[calc(100vh-100px)] py-3 px-4 mb-4">
-      <div className="flex flex-col justify-center items-center gap-y-4 md:gap-y-12 h-36 md:h-72">
-        <h1 className="font-black text-blue-500 text-2xl md:4xl lg:text-5xl">
+      <div className="flex flex-col justify-center items-center gap-y-4 md:gap-y-12 h-36 md:h-60">
+        <h1 className="font-black text-blue-700 text-2xl md:4xl lg:text-5xl">
           سامانه ی خرید و اجاره ی ملک
         </h1>
       </div>
@@ -37,9 +37,9 @@ const HomePage: React.FC = () => {
           {cities.map((i) => (
             <li
               key={i}
-              className="flex justify-center items-center gap-x-3 bg-blue-400 rounded py-2 my-3 mx-6"
+              className="flex justify-center items-center gap-x-3 bg-slate-200 rounded py-2 my-3 mx-6"
             >
-              <FaCity />
+              <FaCity className="text-green-600" />
               <span>{i}</span>
             </li>
           ))}

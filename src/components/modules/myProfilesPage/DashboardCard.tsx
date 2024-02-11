@@ -58,7 +58,7 @@ const DashboardCard: React.FC<DashboardCardPropsInterface> = ({ data }) => {
           {englishNumbersToPersian(data.price)} تومان
         </span>
         <Link
-          href="#"
+          href={`/buy-residential/${data._id}`}
           className="flex justify-between items-center w-full mt-3"
         >
           <span className="text-green-900 hover:text-orange-500 transition">

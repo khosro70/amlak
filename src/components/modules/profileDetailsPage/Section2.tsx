@@ -18,20 +18,22 @@ const Section2: React.FC<Section2PropsInterface> = ({
   constructionData,
 }) => {
   return (
-    <div className="flex flex-col gap-y-3 w-1/4 ">
-      <div className="flex flex-col gap-y-2 justify-center items-center py-6 border-2 rounded-lg shadow-lg">
+    <div className="flex flex-row justify-between md:justify-start md:flex-col gap-y-3 w-full md:w-1/4 ">
+      <div className="flex flex-col gap-y-2 justify-center items-center py-6 border-2 rounded-lg shadow-lg w-1/3 md:w-full">
         <MdOutlineRealEstateAgent size="45" className="text-green-500" />
-        <span className="font-medium text-lg">{realState}</span>
+        <span className="font-medium text-md md:text-lg">
+          املاک: {realState}
+        </span>
         <span className="flex gap-x-2">
           <FaPhone />
           <span className="text-sm">09129414308</span>
         </span>
       </div>
-      <div className="flex gap-x-2 border-2 justify-center items-center py-2 rounded-lg shadow-lg">
+      <div className="flex gap-x-2 border-2 justify-center items-center py-2 rounded-lg shadow-lg w-1/3 md:w-full">
         <IoShareSocial size={18} className="font-medium" />
         <span className="text-sm">اشتراک گذاری</span>
       </div>
-      <div className="flex flex-col justify-center items-center border-2 gap-y-2 py-6 shadow-lg">
+      <div className="flex flex-col justify-center items-center border-2 gap-y-2 py-6 shadow-lg w-1/3 md:w-full">
         <span className="flex gap-x-2 rounded-lg items-center">
           <span className="font-medium">آپارتمان</span>
         </span>
@@ -45,7 +47,7 @@ const Section2: React.FC<Section2PropsInterface> = ({
         </span>
         <span className="flex gap-x-2">
           <BsFillCalendarDateFill className="text-green-500" />
-          <span>تاریخ</span>
+          <span>{new Date(constructionData).toLocaleDateString("fa-IR")}</span>
         </span>
       </div>
     </div>

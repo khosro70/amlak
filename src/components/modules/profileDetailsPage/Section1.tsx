@@ -10,7 +10,7 @@ const Section1: React.FC<Section1PropsInterface> = ({
   amenities,
 }) => {
   return (
-    <div className="w-3/4">
+    <div className="w-full md:w-3/4">
       <div className="flex flex-col  mb-12">
         <span className="font-bold text-lg">{title}</span>
         <span className="flex gap-x-2">
