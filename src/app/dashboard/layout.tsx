@@ -1,16 +1,20 @@
 import DashboardSideBar from "@/modules/DashboardSideBar";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import connectDB from "@/utils/connectDB";
 import User from "@/models/User";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
-const DashboardLayout = async ({ children }) => {
+const DashboardLayout = async ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
   const session = await getServerSession(authOptions);
   if (!session) redirect("/signin");
 
   await connectDB();
-  const user = await User.findOne({ email: session.user.email });
+  const user = await User.findOne({ email: session.user?.email });
   if (!user)
     return (
       <div className="flex justify-center items-center min-h-[calc(100vh-100px)]">

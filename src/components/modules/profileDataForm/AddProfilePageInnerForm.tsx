@@ -1,13 +1,12 @@
 import React from "react";
 import { Form, useFormikContext } from "formik";
-import { CartInterface, profileDataFormInterface } from "@/utils/contracts";
+import { profileDataFormInterface } from "@/utils/contracts";
 import ProfilePageLoading from "./ProfilePageLoading";
 import TextAreaInProfileDataPage from "./TextAreaInProfileDataPage";
 import ProfileDataFormSection1 from "./ProfileDataFormSection1";
 import RadioBotton from "./RadioBotton";
 import RulesSection from "./RulesSection";
 import AmenitiesSection from "./AmenitiesSection";
-import { boolean } from "yup";
 
 interface props {
   loading: boolean;

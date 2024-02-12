@@ -1,6 +1,6 @@
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import SigninPage from "@/templates/SigninPage";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 
 const signin = async () => {

@@ -1,8 +1,8 @@
 import DashboardPage from "@/templates/DashboardPage";
 import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 import connectDB from "@/utils/connectDB";
 import User from "@/models/User";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 const dashboard = async () => {
   await connectDB();

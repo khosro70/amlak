@@ -1,10 +1,18 @@
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
 import LogoutButton from "./LogoutButton";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
-const DashboardSideBar = async ({ role, email }) => {
+interface DashboardSideBarPropsInterface {
+  role: string;
+  email: string;
+}
+
+const DashboardSideBar: React.FC<DashboardSideBarPropsInterface> = async ({
+  role,
+  email,
+}) => {
   const session = await getServerSession(authOptions);
 
   return (

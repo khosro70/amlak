@@ -3,7 +3,7 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -35,15 +35,15 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/api/auth/[...nextauth]/route.jsx",
-    "src/app/(auth)/signup/page.jsx",
-    "src/app/(auth)/signin/page.jsx",
-    "src/app/dashboard/layout.jsx",
-    "src/app/dashboard/page.jsx",
+    "src/app/api/auth/[...nextauth]/route.tsx",
+    "src/app/(auth)/signup/page.tsx",
+    "src/app/(auth)/signin/page.tsx",
+    "src/app/dashboard/layout.tsx",
+    "src/app/dashboard/page.tsx",
     "src/app/api/profile/route.tsx",
-    "src/app/dashboard/my-profiles/page.jsx",
+    "src/app/dashboard/my-profiles/page.tsx",
     "src/app/api/profile/delete/[profileId]/route.tsx",
-    "src/app/admin/page.jsx"
+    "src/app/admin/page.tsx"
   ],
   "exclude": ["node_modules"]
 }

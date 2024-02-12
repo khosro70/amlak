@@ -3,7 +3,6 @@ import React from "react";
 import { BsFillCalendarDateFill } from "react-icons/bs";
 import { FaPhone } from "react-icons/fa";
 import { IoIosPricetags } from "react-icons/io";
-import { IoShareSocial } from "react-icons/io5";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
 import ShareButton from "./ShareButton";
 

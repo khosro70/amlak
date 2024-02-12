@@ -18,7 +18,7 @@ const SideBar: React.FC<SideBarPropsInterface> = ({ category }) => {
 
   useEffect(() => {
     if (category) setSelectedType(mapStringToPersian(category));
-  }, []);
+  }, [category]);
 
   return (
     <div className="w-2/6 sm:w-3/12 lg:w-2/12 bg-slate-200 p-3 h-fit sticky top-[88px] rounded">
