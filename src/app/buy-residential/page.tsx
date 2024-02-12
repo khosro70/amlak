@@ -1,22 +1,22 @@
+
+
 import { NextPage } from "next";
 import BuyResidentialPage from "@/templates/BuyResidentialPage";
 import { buyResidentialPropsInterface, CartInterface } from "@/utils/contracts";
+import connectDB from "@/utils/connectDB";
+import Profile from "@/models/Profile";
 
 const buyResidential: NextPage<buyResidentialPropsInterface> = async ({
   searchParams,
 }) => {
-  const res = await fetch("http://localhost:3000/api/profile", {
-    cache: "no-store",
-  });
-  const data = await res.json();
-  if (data.error) return <h1>مشکلی پیش آمده دوباره تلاش کنید</h1>;
-  let finalData = data.data;
+  await connectDB();
+  const profiles = await Profile.find({ published: true }).select("-userId");
+  let data = await JSON.parse(JSON.stringify(profiles));
   if (searchParams?.category) {
-    finalData = finalData.filter(
+    data = data.filter(
       (i: CartInterface) => i.category === searchParams.category
     );
   }
-  return <BuyResidentialPage data={finalData} category={searchParams?.category} />;
+  return <BuyResidentialPage data={data} category={searchParams?.category} />;
 };
-
 export default buyResidential;
