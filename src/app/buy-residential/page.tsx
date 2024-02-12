@@ -1,5 +1,3 @@
-
-
 import { NextPage } from "next";
 import BuyResidentialPage from "@/templates/BuyResidentialPage";
 import { buyResidentialPropsInterface, CartInterface } from "@/utils/contracts";

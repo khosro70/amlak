@@ -73,6 +73,13 @@ export interface DashboardCardSectionInterface {
   location: string;
 }
 
+export interface DashboardSideBarPropsInterface {
+  role: string;
+  email: string;
+  profiles: CartInterface[];
+  data: CartInterface[];
+}
+
 export interface profileDataFormInterface {
   title: string;
   description: string;

@@ -50,7 +50,7 @@ const AddProfilePage: React.FC<AddProfilePagePropsInterface> = ({ data }) => {
         enableReinitialize={true}
       >
         <AddProfilePageInnerForm loading={loading} {...data} />
-      </Formik>
+      </Formik> 
       <Toaster />
     </div>
   );
