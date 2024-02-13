@@ -73,6 +73,11 @@ export interface DashboardCardSectionInterface {
   location: string;
 }
 
+export interface ProfileDetailsPropsInterface {
+  params: { profileId: string };
+  searchParams?: {};
+}
+
 export interface DashboardSideBarPropsInterface {
   role: string;
   email: string;

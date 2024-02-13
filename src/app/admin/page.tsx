@@ -6,6 +6,11 @@ import User from "@/models/User";
 import DashboardSideBar from "@/modules/DashboardSideBar";
 import Profile from "@/models/Profile";
 import { authOptions } from "../api/auth/[...nextauth]/route";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "املاک وان | پنل ادمین",
+};
 
 const admin = async () => {
   await connectDB();

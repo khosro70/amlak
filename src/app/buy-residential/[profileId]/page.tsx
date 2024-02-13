@@ -1,12 +1,8 @@
 import Profile from "@/models/Profile";
 import ProfileDetailsPage from "@/templates/ProfileDetailsPage";
 import connectDB from "@/utils/connectDB";
-import { NextPage } from "next";
-
-export interface ProfileDetailsPropsInterface {
-  params: { profileId: string };
-  searchParams?: {};
-}
+import { ProfileDetailsPropsInterface } from "@/utils/contracts";
+import { Metadata, NextPage, ResolvingMetadata } from "next";
 
 const ProfileDetails: NextPage<ProfileDetailsPropsInterface> = async ({
   params,
@@ -18,3 +14,19 @@ const ProfileDetails: NextPage<ProfileDetailsPropsInterface> = async ({
 };
 
 export default ProfileDetails;
+
+type Props = {
+  params: { profileId: string };
+};
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  await connectDB();
+  const profile = await Profile.findOne({ _id: params.profileId });
+  return {
+    title: profile.title,
+    description: profile.description,
+    authors: { name: "Khosro Moradi" },
+  };
+};

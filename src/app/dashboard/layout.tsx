@@ -5,6 +5,11 @@ import connectDB from "@/utils/connectDB";
 import User from "@/models/User";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import Profile from "@/models/Profile";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "املاک وان | پنل کاربری",
+};
 
 const DashboardLayout = async ({
   children,
